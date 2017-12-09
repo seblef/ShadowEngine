@@ -1,0 +1,937 @@
+map SciFy 70 70
+
+global_light
+	dir -0 -1 -0
+	color 1 1 1 1
+	end_global_light
+
+ambient_light 0.501961 0.145098 0 1
+
+start_position 38.1428 32.5747
+
+material Desk std
+
+	ambient 0 0 0 1
+	diffuse 1 1 1 1
+	specular 0 0 0 1
+
+	shine 0
+	spec_intens 0
+
+	tex diffuse Textures/SciFy/Desk.dds
+
+
+
+
+
+end_material
+
+material Wall1_1 std
+
+	ambient 0 0 0 1
+	diffuse 1 1 1 1
+	specular 0 0 0 1
+
+	shine 0
+	spec_intens 0
+
+	tex diffuse Textures\SciFy\Wall1_1.dds
+
+
+
+
+
+end_material
+
+material Floor2 std
+
+	ambient 0 0 0 1
+	diffuse 1 1 1 1
+	specular 0 0 0 1
+
+	shine 0
+	spec_intens 0
+
+	tex diffuse Textures\SciFy\Floor2.dds
+
+	uv_scale 2 2
+	uv_rotation 90
+
+
+
+
+end_material
+
+material Wall3_2 std
+
+	ambient 0 0 0 1
+	diffuse 1 1 1 1
+	specular 0 0 0 1
+
+	shine 0
+	spec_intens 0
+
+	tex diffuse Textures\SciFy\Wall3_2.dds
+
+
+
+
+
+end_material
+
+material default std
+
+	ambient 0 0 0 1
+	diffuse 1 1 1 1
+	specular 0 0 0 1
+
+	shine 0
+	spec_intens 0
+
+	tex diffuse Textures/Test.dds
+	tex normal Textures/normal.bmp
+
+
+
+
+
+end_material
+
+material Wall2_2 std
+
+	ambient 0 0 0 1
+	diffuse 1 1 1 1
+	specular 0 0 0 1
+
+	shine 0
+	spec_intens 0
+
+	tex diffuse Textures\SciFy\Wall2_2.dds
+
+
+
+
+
+end_material
+
+material Wall3_1 std
+
+	ambient 0 0 0 1
+	diffuse 1 1 1 1
+	specular 0 0 0 1
+
+	shine 0
+	spec_intens 0
+
+	tex diffuse Textures\SciFy\Wall3_1.dds
+
+
+
+
+
+end_material
+
+material Wall2_1 std
+
+	ambient 0 0 0 1
+	diffuse 1 1 1 1
+	specular 0 0 0 1
+
+	shine 0
+	spec_intens 0
+
+	tex diffuse Textures\SciFy\Wall2_1.dds
+
+
+
+
+
+end_material
+
+material Floor std
+
+	ambient 0 0 0 1
+	diffuse 1 1 1 1
+	specular 0 0 0 1
+
+	shine 200
+	spec_intens 4
+
+	tex diffuse Textures\SciFy\FloorD.dds
+	tex normal Textures\SciFy\FloorN.dds
+
+
+
+
+
+end_material
+
+material Floor3 std
+
+	ambient 0 0 0 1
+	diffuse 1 1 1 1
+	specular 0 0 0 1
+
+	shine 0
+	spec_intens 0
+
+	tex diffuse Textures\SciFy\Floor3.dds
+
+	uv_scale 0.5 0.5
+
+
+
+
+end_material
+
+mesh DebrisMesh
+
+	geometry Sphere.GEO
+	material Floor
+	physic_shape Sphere
+
+	no_collision
+
+end_mesh
+
+particle_system Smoke
+emitter point
+	common
+	life 2.4 3
+	mass 0.5 0.5
+	friction 0 0
+	velocity -1 0.8 -1	1 1 1
+	start_color 0.8 0.8 0.8 1	1 1 1 1
+	end_color 0 0 0 0	0 0 0 0
+	start_size 0.1 0.1 0.1	0.2 0.2 0.2
+	end_size 0.3 0.3 0.3	0.5 0.5 0.5
+	gravity 0 0 0
+	renderer quad
+	max_particles 1000
+	emission_rate 100
+	material
+		texture Particles/Textures/Smoke.bmp
+		blend src_color inv_src_color
+	end_material
+	end_common
+end_emitter
+
+end_system
+game_material Default
+	debris DebrisMesh
+end_game_material
+
+mesh Wall3_1
+
+	geometry Wall3.GEO
+	material Wall3_1
+	physic_shape Box
+
+	game_material Default
+
+end_mesh
+
+mesh Desk
+
+	geometry Desk.GEO
+	material Desk
+	physic_shape Box
+
+	game_material Default
+
+end_mesh
+
+mesh Wall1_1
+
+	geometry Wall_Corner.GEO
+	material Wall1_1
+	physic_shape Box
+
+	game_material Default
+
+end_mesh
+
+mesh Wall2_2
+
+	geometry Wall2.GEO
+	material Wall2_2
+	physic_shape Box
+
+	game_material Default
+
+end_mesh
+
+mesh Wall3_2
+
+	geometry Wall3.GEO
+	material Wall3_2
+	physic_shape Box
+
+	game_material Default
+
+end_mesh
+
+mesh Wall2_1
+
+	geometry Wall2.GEO
+	material Wall2_1
+	physic_shape Box
+
+	game_material Default
+
+end_mesh
+
+
+ground Maps/SciFy.sgd
+
+object mesh Desk
+
+	position 33.2474 32.6823
+	rotation 0 0 0
+	height 0.0101744
+end_object
+
+object mesh Wall3_1
+
+	position 41 27
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_2
+
+	position 28 27
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_2
+
+	position 17 35
+	rotation 0 0 0
+end_object
+
+object mesh Wall1_1
+
+	position 24 39
+	rotation 0 0 0
+end_object
+
+object mesh Wall2_1
+
+	position 17 43
+	rotation 0 0 0
+end_object
+
+object mesh Wall2_2
+
+	position 46 20
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_2
+
+	position 48 35
+	rotation 0 0 0
+end_object
+
+object mesh Wall2_2
+
+	position 36 47
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_2
+
+	position 25 40
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_1
+
+	position 18 47
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_2
+
+	position 48 40
+	rotation 0 0 0
+end_object
+
+object mesh Wall2_2
+
+	position 26 20
+	rotation 0 90 0
+end_object
+
+object mesh Wall2_2
+
+	position 21 47
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_1
+
+	position 28 20
+	rotation 0 90 0
+end_object
+
+object mesh Wall2_2
+
+	position 36 20
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_1
+
+	position 23 47
+	rotation 0 90 0
+end_object
+
+object mesh Wall2_1
+
+	position 17 23
+	rotation 0 0 0
+end_object
+
+object mesh Wall2_1
+
+	position 48 38
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_1
+
+	position 24 33
+	rotation 0 0 0
+end_object
+
+object mesh Wall2_2
+
+	position 21 20
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_1
+
+	position 23 20
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_2
+
+	position 48 30
+	rotation 0 0 0
+end_object
+
+object mesh Wall2_1
+
+	position 17 33
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_1
+
+	position 43 47
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_1
+
+	position 43 20
+	rotation 0 90 0
+end_object
+
+object particles Smoke
+
+	position 20.5113 22.7966
+	rotation 0 0 0
+	height 1
+
+end_object
+
+object mesh Wall3_2
+
+	position 38 27
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_1
+
+	position 38 20
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_1
+
+	position 18 20
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_1
+
+	position 38 47
+	rotation 0 90 0
+end_object
+
+object mesh Wall1_1
+
+	position 48 45
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_2
+
+	position 38 40
+	rotation 0 90 0
+end_object
+
+object mesh Wall2_1
+
+	position 48 43
+	rotation 0 0 0
+end_object
+
+object mesh Wall2_1
+
+	position 48 23
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_2
+
+	position 25 27
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_2
+
+	position 28 40
+	rotation 0 90 0
+end_object
+
+light area
+	color 0 1 1 10
+	range 10
+	position 41 5.85765 24
+	shadowmap_size 512
+	shadowmap_filter 8
+	direction 0 -1 -4.37114e-008
+	far_angle 120
+	near_angle 60
+	near_z 0.1
+	area_width 3.6
+	area_height 1.8
+end_light
+
+light omni
+	color 1 0.501961 0 1.1
+	range 6.5
+	position 34 2.42853 33
+	cast_no_shadows
+end_light
+
+light area
+	color 0 1 1 10
+	range 10
+	position 24 5.85765 23
+	shadowmap_size 512
+	shadowmap_filter 8
+	direction 0 -1 -4.37114e-008
+	far_angle 120
+	near_angle 60
+	near_z 0.1
+	area_width 3.6
+	area_height 1.8
+end_light
+
+light area
+	color 0 1 1 10
+	range 10
+	position 41 5.85765 43
+	shadowmap_size 512
+	shadowmap_filter 8
+	direction 0 -1 -4.37114e-008
+	far_angle 120
+	near_angle 60
+	near_z 0.1
+	area_width 3.6
+	area_height 1.8
+end_light
+
+light area
+	color 1 0 0 10
+	range 10
+	position 40.9376 1.92323 32.1593
+	shadowmap_size 512
+	shadowmap_filter 8
+	direction -1 -4.37114e-008 4.37114e-008
+	far_angle 81
+	near_angle 30
+	near_z 0.1
+	area_width 3.6
+	area_height 1.8
+end_light
+
+light area
+	color 0 1 1 10
+	range 10
+	position 24 5.85765 42
+	shadowmap_size 512
+	shadowmap_filter 8
+	direction 0 -1 -4.37114e-008
+	far_angle 120
+	near_angle 60
+	near_z 0.1
+	area_width 3.6
+	area_height 1.8
+end_light
+
+light area
+	color 1 0 0 10
+	range 10
+	position 25 1.92323 33
+	shadowmap_size 512
+	shadowmap_filter 8
+	direction 1 -4.37114e-008 -4.37114e-008
+	far_angle 81
+	near_angle 30
+	near_z 0.1
+	area_width 3.6
+	area_height 1.8
+end_light
+
+object entity barrel
+
+	position 33.1852 0 37.492
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 27.3896 0 33.4177
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 28.7588 0 34.5001
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 31.744 0 36.376
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 34.5492 0 38.014
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 30.2961 0 35.5011
+	rotation 0 0 0
+
+end_object
+
+object mesh Wall1_1
+
+	position 17 45
+	rotation 0 0 0
+end_object
+
+object mesh Wall2_2
+
+	position 31 47
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_1
+
+	position 41 36
+	rotation 0 0 0
+end_object
+
+object mesh Wall2_2
+
+	position 41 47
+	rotation 0 90 0
+end_object
+
+object mesh Wall1_1
+
+	position 24 26
+	rotation 0 0 0
+end_object
+
+object mesh Wall1_1
+
+	position 41 26
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_2
+
+	position 35 27
+	rotation 0 90 0
+end_object
+
+object particles Smoke
+
+	position 32.9377 32.6128
+	rotation 0 0 0
+	height 1
+
+end_object
+
+object mesh Wall3_2
+
+	position 48 25
+	rotation 0 0 0
+end_object
+
+object mesh Wall2_2
+
+	position 26 47
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_2
+
+	position 17 20
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_2
+
+	position 17 30
+	rotation 0 0 0
+end_object
+
+object mesh Wall2_1
+
+	position 17 28
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_1
+
+	position 33 20
+	rotation 0 90 0
+end_object
+
+object mesh Wall2_1
+
+	position 17 38
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_1
+
+	position 24 36
+	rotation 0 0 0
+end_object
+
+object mesh Wall2_2
+
+	position 31 20
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_2
+
+	position 48 20
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_2
+
+	position 17 40
+	rotation 0 0 0
+end_object
+
+object actor test
+
+	position 33.3184 23.3022
+	rotation 0
+
+end_object
+
+object entity barrel
+
+	position 39.1119 0 37.234
+	rotation 0 0 0
+
+end_object
+
+object mesh Wall2_1
+
+	position 48 28
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_1
+
+	position 41 33
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_1
+
+	position 24 30
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_1
+
+	position 41 30
+	rotation 0 0 0
+end_object
+
+object mesh Wall2_2
+
+	position 41 20
+	rotation 0 90 0
+end_object
+
+object mesh Wall3_1
+
+	position 24 27
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_1
+
+	position 28 47
+	rotation 0 90 0
+end_object
+
+object mesh Wall2_2
+
+	position 46 47
+	rotation 0 90 0
+end_object
+
+object mesh Wall2_1
+
+	position 48 33
+	rotation 0 0 0
+end_object
+
+object entity barrel
+
+	position 37.7191 0 38.1299
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 27.6043 0 28.1491
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 26.9497 0 29.2376
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 39.451 0 35.9803
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 39.7433 0 32.7336
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 26.7377 0 32.2244
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 39.8858 0 34.5206
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 28.9598 0 28.0136
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 30.3514 0 28.0778
+	rotation 0 0 0
+
+end_object
+
+object mesh Wall3_2
+
+	position 17 25
+	rotation 0 0 0
+end_object
+
+object entity barrel
+
+	position 39.4594 0 31.1469
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 26.686 0 30.8499
+	rotation 0 0 0
+
+end_object
+
+object entity barrel
+
+	position 36.2422 0 38.5958
+	rotation 0 0 0
+
+end_object
+
+object mesh Wall3_1
+
+	position 33 47
+	rotation 0 90 0
+end_object
+
+object mesh Wall1_1
+
+	position 41 39
+	rotation 0 0 0
+end_object
+
+object mesh Wall3_2
+
+	position 35 40
+	rotation 0 90 0
+end_object
+
+end_map

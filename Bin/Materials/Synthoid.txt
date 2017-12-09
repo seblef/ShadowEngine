@@ -1,0 +1,6 @@
+
+material Synthoid std
+
+	tex diffuse Textures/SciFy/Synthoid_D.dds
+
+end_material

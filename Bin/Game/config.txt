@@ -1,0 +1,49 @@
+
+
+//windowed				true
+//resWidth				1024
+//resHeight				768
+
+windowed				false
+resWidth				1920
+resHeight				1080
+
+multithread				true
+
+map						Maps/SciFy.txt
+player					player
+
+
+//			System values		//
+
+showFPS					true
+
+hudFont					2D/Font.sfn
+crossTexture			Textures/HUD/cross.dds
+crossSize				10.0
+
+cameraBaseDistance		15.0
+
+gravity					(0.0,-9.81,0.0)
+
+baseDebrisCount			5
+baseDebrisMinVelocity	1.0
+baseDebrisMaxVelocity	10.0
+baseDebrisAngle			45.0
+baseDebrisAngleSpeed	180.0
+baseDebrisSize			0.01
+
+aiDamageFactor			1.2
+playerDamageFactor		0.8
+damageToForce			0.1
+
+deadActorStayOnMap		1.0
+
+
+//			Rendering			//
+
+HDR_exposure				0.5
+HDR_brightness_threshold	0.5
+
+HDAO_enable					true
+HDR_enable					false

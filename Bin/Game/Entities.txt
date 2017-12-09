@@ -1,0 +1,43 @@
+
+entity explosive barrel
+
+	geometry	barrel.geo
+	material	Barrel
+
+	shape		chull
+
+	density		1.0
+
+	explosion	barrel01
+
+end_entity
+
+entity trigger bonus_rocket
+
+	geometry	BonusBox.geo
+	material	Bonus/rocket
+
+	shape		sphere
+
+	trigger weapon
+		weapon		Rocket1
+	end_trigger
+
+	animated
+
+end_entity
+
+entity trigger bonus_assault
+
+	geometry	BonusBox.geo
+	material	Bonus/assault
+
+	shape		sphere
+
+	trigger weapon
+		weapon		Gun1
+	end_trigger
+
+	animated
+
+end_entity

@@ -1,0 +1,7 @@
+
+material Gun1 std
+
+	tex diffuse Textures/SciFy/Gun1_D.dds
+	tex normal Textures/SciFy/Gun1_N.dds
+
+end_material

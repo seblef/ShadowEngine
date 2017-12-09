@@ -1,0 +1,6 @@
+
+material Test std
+
+	tex diffuse Textures/SkinTest.jpg
+
+end_material

@@ -1,0 +1,23 @@
+
+effect explosion barrel01
+
+	size				2.0
+	life				1.0
+
+	texture_dir			Textures/Explosions/fiery/
+	explosion_color_blend
+
+	smoke_texture		Particles/Textures/Smoke.bmp
+	smoke_color_blend
+
+	debris_mesh			Sphere.GEO
+	debris_material		Floor
+
+	debris_size			0.05
+
+	explosion_sound		Sounds/explosion.wav
+
+	inner_radius		2.5
+	outer_radius		5.0
+
+end_explosion

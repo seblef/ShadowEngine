@@ -1,0 +1,33 @@
+
+character test
+
+	actor		Synthoid.act
+	material	Synthoid
+	weapon		Gun1
+	animation	pose			Actors/Synthoid/Pose.aan
+	animation	walk			Actors/Synthoid/Walk.aan
+	ai_machine	attack
+	ai_state	idle
+
+	forward_speed	3.0
+	rotation_speed	120.0
+
+end_character
+
+
+character player
+
+	actor		Synthoid.act
+	material	Synthoid
+	weapon		Rocket1
+	animation	pose			Actors/Synthoid/Pose.aan
+	animation	walk			Actors/Synthoid/Walk.aan
+	ai_machine	attack
+	ai_state	idle
+
+	forward_speed	6.0
+	backward_speed	3.0
+	rotation_speed	360.0
+
+end_character
+

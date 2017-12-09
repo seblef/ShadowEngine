@@ -1,0 +1,7 @@
+
+material default std
+
+	tex diffuse Textures/Test.dds
+	tex normal Textures/normal.bmp
+
+end_material

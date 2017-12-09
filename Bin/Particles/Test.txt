@@ -1,0 +1,23 @@
+particle_system system
+emitter point
+	common
+	life 2.4 3
+	mass 0.5 0.5
+	friction 0 0
+	velocity -1 0.8 -1	1 1 1
+	start_color 0.8 0.8 0.8 1	1 1 1 1
+	end_color 0 0 0 0	0 0 0 0
+	start_size 0.1 0.1 0.1	0.2 0.2 0.2
+	end_size 0.3 0.3 0.3	0.5 0.5 0.5
+	gravity 0 0 0
+	renderer quad
+	max_particles 1000
+	emission_rate 100
+	material
+		texture Particles/Textures/Smoke.bmp
+		blend src_color inv_src_color
+	end_material
+	end_common
+end_emitter
+
+end_system
