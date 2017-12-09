@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{96AFE3E3-4F63-4405-BCA5-3363D423F689}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DX11MediaMulti</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\SDK\</OutDir>
+    <TargetName>DX11MultiD</TargetName>
+    <IncludePath>..\SDK\DirectX11;..\SDK;$(IncludePath)</IncludePath>
+    <LibraryPath>..\SDK\DirectX11\Lib;..\SDK;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\SDK</OutDir>
+    <IncludePath>D:\Code\Shadow\SDK\DirectX11;D:\Code\Shadow\SDK;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Code\Shadow\SDK\DirectX11\Lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DXMULTI;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>d3d11.lib;d3dx11.lib;dinput8.lib;dxguid.lib;dxgi.lib;winmm.lib;X3DAudio.lib</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_DXMULTI;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>d3d11.lib;d3dx11.lib;dinput8.lib;dxguid.lib;dxgi.lib;winmm.lib;X3DAudio.lib</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\DX11Media\ConstantBuffer.h" />
+    <ClInclude Include="..\DX11Media\IndexBuffer.h" />
+    <ClInclude Include="..\DX11Media\Shader.h" />
+    <ClInclude Include="..\DX11Media\ShadowMap.h" />
+    <ClInclude Include="..\DX11Media\Sound.h" />
+    <ClInclude Include="..\DX11Media\SoundCone.h" />
+    <ClInclude Include="..\DX11Media\SoundDevice.h" />
+    <ClInclude Include="..\DX11Media\SoundListener.h" />
+    <ClInclude Include="..\DX11Media\SoundSource.h" />
+    <ClInclude Include="..\DX11Media\SoundUtil.h" />
+    <ClInclude Include="..\DX11Media\SoundVirtualSource.h" />
+    <ClInclude Include="..\DX11Media\SoundWAV.h" />
+    <ClInclude Include="..\DX11Media\Texture.h" />
+    <ClInclude Include="..\DX11Media\VertexBuffer.h" />
+    <ClInclude Include="..\SDK\DX11MediaMulti.h" />
+    <ClInclude Include="MMedia.h" />
+    <ClInclude Include="MVideoDevice.h" />
+    <ClInclude Include="MView.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\DX11Media\ConstantBuffer.cpp" />
+    <ClCompile Include="..\DX11Media\IndexBuffer.cpp" />
+    <ClCompile Include="..\DX11Media\Shader.cpp" />
+    <ClCompile Include="..\DX11Media\ShadowMap.cpp" />
+    <ClCompile Include="..\DX11Media\SoundDevice.cpp" />
+    <ClCompile Include="..\DX11Media\SoundSource.cpp" />
+    <ClCompile Include="..\DX11Media\SoundVirtualSource.cpp" />
+    <ClCompile Include="..\DX11Media\SoundWAV.cpp" />
+    <ClCompile Include="..\DX11Media\Texture.cpp" />
+    <ClCompile Include="..\DX11Media\VertexBuffer.cpp" />
+    <ClCompile Include="MMedia.cpp" />
+    <ClCompile Include="MVideoDevice.cpp" />
+    <ClCompile Include="MView.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{74B91BDB-9BB5-4E33-9A9A-353111B5B8C5}</ProjectGuid>
+    <RootNamespace>ShadowEditor</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\Bin\</OutDir>
+    <TargetName>ShadowEditD</TargetName>
+    <IncludePath>..\SDK\3DS;..\SDK\PhysX\Include;..\SDK\DirectX11;..\SDK;$(IncludePath)</IncludePath>
+    <LibraryPath>..\SDK\PhysX\Lib;..\SDK;..\SDK\DirectX11\Lib;..\SDK\3DS;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\Bin</OutDir>
+    <IncludePath>D:\Code\Shadow\SDK\3DS;D:\Code\Shadow\SDK\PhysX\Include;D:\Code\Shadow\SDK\DirectX11;D:\Code\Shadow\SDK;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Code\Shadow\SDK\PhysX\Lib;D:\Code\Shadow\SDK;D:\Code\Shadow\SDK\DirectX11\Lib;D:\Code\Shadow\SDK\3DS;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>CoreD.lib;MediaCommonD.lib;DX11MultiD.lib;RendererD.lib;R2DD.lib;GameD.lib;ParticlesD.lib;SoundLibD.lib;AID.lib;PropLibD.lib;PhysX3CharacterKinematic_x86.lib;PhysX3Common_x86.lib;PhysX3Cooking_x86.lib;PhysX3Extensions.lib;PhysX3_x86.lib;PhysX3Vehicle.lib;PhysXProfileSDK.lib;PhysXVisualDebuggerSDK.lib;PxTask.lib;ftkvc40.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <Profile>false</Profile>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <AdditionalDependencies>Core.lib;MediaCommon.lib;DX11MediaMulti.lib;Renderer.lib;R2D.lib;Collision.lib;Game.lib;Particles.lib;Sound.lib;PhysX3CharacterKinematicCHECKED_x86.lib;PhysX3CommonCHECKED_x86.lib;PhysX3CookingCHECKED_x86.lib;PhysX3ExtensionsCHECKED.lib;PhysX3CHECKED_x86.lib;PhysX3VehicleCHECKED.lib;PhysXProfileSDKCHECKED.lib;PhysXVisualDebuggerSDKCHECKED.lib;PxTaskCHECKED.lib;ftkvc40.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CParticlesPropertyGrid.h" />
+    <ClInclude Include="CPreviewMesh.h" />
+    <ClInclude Include="CPreviewParticles.h" />
+    <ClInclude Include="EditDlg.h" />
+    <ClInclude Include="EditorView.h" />
+    <ClInclude Include="GameMaterialEditor.h" />
+    <ClInclude Include="GroundEditDlg.h" />
+    <ClInclude Include="G_BaseToolCamTranslate.h" />
+    <ClInclude Include="G_BaseToolCamRotate.h" />
+    <ClInclude Include="G_BaseToolCreate.h" />
+    <ClInclude Include="G_BaseToolHeight.h" />
+    <ClInclude Include="G_BaseToolNull.h" />
+    <ClInclude Include="G_BaseToolPaste.h" />
+    <ClInclude Include="G_BaseToolRotate.h" />
+    <ClInclude Include="G_BaseToolRotateZ.h" />
+    <ClInclude Include="G_BaseToolTranslate.h" />
+    <ClInclude Include="G_Camera.h" />
+    <ClInclude Include="G_Actor.h" />
+    <ClInclude Include="G_Creator.h" />
+    <ClInclude Include="G_EditorApp.h" />
+    <ClInclude Include="G_EditorDlgFactory.h" />
+    <ClInclude Include="G_EditorObjDrawer.h" />
+    <ClInclude Include="G_EditorParticleSystem.h" />
+    <ClInclude Include="G_EditorRenderer.h" />
+    <ClInclude Include="G_Entity.h" />
+    <ClInclude Include="G_EntityDB.h" />
+    <ClInclude Include="G_EntityTemplate.h" />
+    <ClInclude Include="G_FlagRenderer.h" />
+    <ClInclude Include="G_GameMaterial.h" />
+    <ClInclude Include="G_GameMaterialSaver.h" />
+    <ClInclude Include="G_GridRenderer.h" />
+    <ClInclude Include="G_Ground.h" />
+    <ClInclude Include="G_GroundLoader.h" />
+    <ClInclude Include="G_GroundSaver.h" />
+    <ClInclude Include="G_GroundToolPaint.h" />
+    <ClInclude Include="G_GroundToolSetStartPos.h" />
+    <ClInclude Include="G_GroundToolWakable.h" />
+    <ClInclude Include="G_Light.h" />
+    <ClInclude Include="G_Map.h" />
+    <ClInclude Include="G_MapLoader.h" />
+    <ClInclude Include="G_MapSaver.h" />
+    <ClInclude Include="G_MaterialSave.h" />
+    <ClInclude Include="G_MaterialSaver.h" />
+    <ClInclude Include="G_Mesh.h" />
+    <ClInclude Include="G_MeshTemplate.h" />
+    <ClInclude Include="G_MeshTemplateSave.h" />
+    <ClInclude Include="G_MeshTemplateSaver.h" />
+    <ClInclude Include="G_Object.h" />
+    <ClInclude Include="G_ParticlesTemplate.h" />
+    <ClInclude Include="G_ParticlesTemplateSaver.h" />
+    <ClInclude Include="G_ParticleSystem.h" />
+    <ClInclude Include="G_PreviewCamera.h" />
+    <ClInclude Include="G_ResourceCollector.h" />
+    <ClInclude Include="G_Selection.h" />
+    <ClInclude Include="G_SelectionItem.h" />
+    <ClInclude Include="G_Sound.h" />
+    <ClInclude Include="G_SoundCone.h" />
+    <ClInclude Include="G_SoundTemplate.h" />
+    <ClInclude Include="G_SoundTemplateSaver.h" />
+    <ClInclude Include="G_Tool.h" />
+    <ClInclude Include="G_ToolSystem.h" />
+    <ClInclude Include="G_Utils.h" />
+    <ClInclude Include="G_IMapVisitor.h" />
+    <ClInclude Include="LightEditDlg.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MainToolBar.h" />
+    <ClInclude Include="MapPropertiesDlg.h" />
+    <ClInclude Include="MatAnimDlg.h" />
+    <ClInclude Include="MatColorDlg.h" />
+    <ClInclude Include="MaterialPropertySheet.h" />
+    <ClInclude Include="MatFadeAnimDlg.h" />
+    <ClInclude Include="MatStateDlg.h" />
+    <ClInclude Include="MatTextureAnimDlg.h" />
+    <ClInclude Include="MatTextureDlg.h" />
+    <ClInclude Include="MatUVAnimDlg.h" />
+    <ClInclude Include="MatUVDlg.h" />
+    <ClInclude Include="MeshTemplateDlg.h" />
+    <ClInclude Include="NullEditDlg.h" />
+    <ClInclude Include="OutputWnd.h" />
+    <ClInclude Include="ParticleMaterial.h" />
+    <ClInclude Include="ParticlesEditor.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceToolBar.h" />
+    <ClInclude Include="ResourceTreeView.h" />
+    <ClInclude Include="ResourceView.h" />
+    <ClInclude Include="SelectionDlg.h" />
+    <ClInclude Include="ShadowEditor.h" />
+    <ClInclude Include="ShadowEditorDoc.h" />
+    <ClInclude Include="ShadowEditorView.h" />
+    <ClInclude Include="SoundEditor.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CParticlesPropertyGrid.cpp" />
+    <ClCompile Include="CPreviewMesh.cpp" />
+    <ClCompile Include="CPreviewParticles.cpp" />
+    <ClCompile Include="EditorView.cpp" />
+    <ClCompile Include="GameMaterialEditor.cpp" />
+    <ClCompile Include="GroundEditDlg.cpp" />
+    <ClCompile Include="G_Actor.cpp" />
+    <ClCompile Include="G_BaseToolCamTranslate.cpp" />
+    <ClCompile Include="G_BaseToolCreate.cpp" />
+    <ClCompile Include="G_BaseToolHeight.cpp" />
+    <ClCompile Include="G_BaseToolNull.cpp" />
+    <ClCompile Include="G_BaseToolPaste.cpp" />
+    <ClCompile Include="G_BaseToolRotate.cpp" />
+    <ClCompile Include="G_BaseToolRotateZ.cpp" />
+    <ClCompile Include="G_BaseToolTranslate.cpp" />
+    <ClCompile Include="G_Creator.cpp" />
+    <ClCompile Include="G_EditorApp.cpp" />
+    <ClCompile Include="G_EditorDlgFactory.cpp" />
+    <ClCompile Include="G_EditorObjDrawer.cpp" />
+    <ClCompile Include="G_EditorParticleSystem.cpp" />
+    <ClCompile Include="G_EditorRenderer.cpp" />
+    <ClCompile Include="G_Entity.cpp" />
+    <ClCompile Include="G_EntityDB.cpp" />
+    <ClCompile Include="G_EntityTemplate.cpp" />
+    <ClCompile Include="G_FlagRenderer.cpp" />
+    <ClCompile Include="G_GameMaterialSaver.cpp" />
+    <ClCompile Include="G_GridRenderer.cpp" />
+    <ClCompile Include="G_Ground.cpp" />
+    <ClCompile Include="G_GroundLoader.cpp" />
+    <ClCompile Include="G_GroundSaver.cpp" />
+    <ClCompile Include="G_GroundToolPaint.cpp" />
+    <ClCompile Include="G_GroundToolSetStartPos.cpp" />
+    <ClCompile Include="G_GroundToolWakable.cpp" />
+    <ClCompile Include="G_Light.cpp" />
+    <ClCompile Include="G_Map.cpp" />
+    <ClCompile Include="G_MapLoader.cpp" />
+    <ClCompile Include="G_MapSaver.cpp" />
+    <ClCompile Include="G_MaterialSave.cpp" />
+    <ClCompile Include="G_MaterialSaver.cpp" />
+    <ClCompile Include="G_Mesh.cpp" />
+    <ClCompile Include="G_MeshTemplate.cpp" />
+    <ClCompile Include="G_MeshTemplateSaver.cpp" />
+    <ClCompile Include="G_Object.cpp" />
+    <ClCompile Include="G_ParticlesTemplateSaver.cpp" />
+    <ClCompile Include="G_ParticleSystem.cpp" />
+    <ClCompile Include="G_PreviewCamera.cpp" />
+    <ClCompile Include="G_ResourceCollector.cpp" />
+    <ClCompile Include="G_Selection.cpp" />
+    <ClCompile Include="G_Sound.cpp" />
+    <ClCompile Include="G_SoundTemplateSaver.cpp" />
+    <ClCompile Include="G_ToolSystem.cpp" />
+    <ClCompile Include="LightEditDlg.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MapPropertiesDlg.cpp" />
+    <ClCompile Include="MatAnimDlg.cpp" />
+    <ClCompile Include="MatColorDlg.cpp" />
+    <ClCompile Include="MaterialPropertySheet.cpp" />
+    <ClCompile Include="MatFadeAnimDlg.cpp" />
+    <ClCompile Include="MatStateDlg.cpp" />
+    <ClCompile Include="MatTextureAnimDlg.cpp" />
+    <ClCompile Include="MatTextureDlg.cpp" />
+    <ClCompile Include="MatUVAnimDlg.cpp" />
+    <ClCompile Include="MatUVDlg.cpp" />
+    <ClCompile Include="MeshTemplateDlg.cpp" />
+    <ClCompile Include="NullEditDlg.cpp" />
+    <ClCompile Include="OutputWnd.cpp" />
+    <ClCompile Include="ParticleMaterial.cpp" />
+    <ClCompile Include="ParticlesEditor.cpp" />
+    <ClCompile Include="ResourceTreeView.cpp" />
+    <ClCompile Include="ResourceView.cpp" />
+    <ClCompile Include="SelectionDlg.cpp" />
+    <ClCompile Include="ShadowEditor.cpp" />
+    <ClCompile Include="ShadowEditorDoc.cpp" />
+    <ClCompile Include="ShadowEditorView.cpp" />
+    <ClCompile Include="SoundEditor.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ShadowEditor.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap1.bmp" />
+    <Image Include="res\classview.bmp" />
+    <Image Include="res\classview_hc.bmp" />
+    <Image Include="res\class_view.ico" />
+    <Image Include="res\class_view_hc.ico" />
+    <Image Include="res\explorer.bmp" />
+    <Image Include="res\explorer_hc.bmp" />
+    <Image Include="res\fileview.bmp" />
+    <Image Include="res\fileview_hc.bmp" />
+    <Image Include="res\file_view.ico" />
+    <Image Include="res\file_view_hc.ico" />
+    <Image Include="res\MAINBAR2.bmp" />
+    <Image Include="res\menuimages.bmp" />
+    <Image Include="res\menuimages_hc.bmp" />
+    <Image Include="res\output_wnd.ico" />
+    <Image Include="res\output_wnd_hc.ico" />
+    <Image Include="res\properties.bmp" />
+    <Image Include="res\properties_hc.bmp" />
+    <Image Include="res\properties_wnd.ico" />
+    <Image Include="res\properties_wnd_hc.ico" />
+    <Image Include="res\Resources.bmp" />
+    <Image Include="res\ResourcesIcons.bmp" />
+    <Image Include="res\ShadowEditor.ico" />
+    <Image Include="res\ShadowEditorDoc.ico" />
+    <Image Include="res\sort.bmp" />
+    <Image Include="res\sort_hc.bmp" />
+    <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\toolbar1.bmp" />
+    <Image Include="res\Toolbar256.bmp" />
+    <Image Include="UserImages.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ShadowEditor.rc2" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="ShadowEditor.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
