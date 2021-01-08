@@ -14,20 +14,20 @@
     <ProjectGuid>{74B91BDB-9BB5-4E33-9A9A-353111B5B8C5}</ProjectGuid>
     <RootNamespace>ShadowEditor</RootNamespace>
     <Keyword>MFCProj</Keyword>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>NotSet</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>NotSet</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
@@ -44,16 +44,18 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\Bin\</OutDir>
-    <TargetName>ShadowEditD</TargetName>
-    <IncludePath>..\SDK\3DS;..\SDK\PhysX\Include;..\SDK\DirectX11;..\SDK;$(IncludePath)</IncludePath>
-    <LibraryPath>..\SDK\PhysX\Lib;..\SDK;..\SDK\DirectX11\Lib;..\SDK\3DS;$(LibraryPath)</LibraryPath>
+    <OutDir>..\Bin</OutDir>
+    <TargetName>$(ProjectName)D</TargetName>
+    <IncludePath>..\SDK\3DS;..\SDK\PhysX\Include;..\SDK;$(IncludePath)</IncludePath>
+    <LibraryPath>..\SDK\PhysX\Lib;..\build\$(Configuration)\lib;..\SDK\DirectX11\Lib;..\SDK\3DS;$(LibraryPath)</LibraryPath>
+    <IntDir>..\build\$(Configuration)\int\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\Bin</OutDir>
-    <IncludePath>D:\Code\Shadow\SDK\3DS;D:\Code\Shadow\SDK\PhysX\Include;D:\Code\Shadow\SDK\DirectX11;D:\Code\Shadow\SDK;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Code\Shadow\SDK\PhysX\Lib;D:\Code\Shadow\SDK;D:\Code\Shadow\SDK\DirectX11\Lib;D:\Code\Shadow\SDK\3DS;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\SDK\3DS;..\SDK\PhysX\Include;..\SDK;$(IncludePath)</IncludePath>
+    <LibraryPath>..\SDK\PhysX\Lib;..\build\$(Configuration)\lib;..\SDK\DirectX11\Lib;..\SDK\3DS;$(LibraryPath)</LibraryPath>
+    <IntDir>..\build\$(Configuration)\int\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -66,7 +68,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>CoreD.lib;MediaCommonD.lib;DX11MultiD.lib;RendererD.lib;R2DD.lib;GameD.lib;ParticlesD.lib;SoundLibD.lib;AID.lib;PropLibD.lib;PhysX3CharacterKinematic_x86.lib;PhysX3Common_x86.lib;PhysX3Cooking_x86.lib;PhysX3Extensions.lib;PhysX3_x86.lib;PhysX3Vehicle.lib;PhysXProfileSDK.lib;PhysXVisualDebuggerSDK.lib;PxTask.lib;ftkvc40.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Core.lib;MediaCommon.lib;DX11MediaMulti.lib;Renderer.lib;Renderer2D.lib;Game.lib;Particles.lib;Sound.lib;AI.lib;PhysX3CharacterKinematic_x86.lib;PhysX3Common_x86.lib;PhysX3Cooking_x86.lib;PhysX3Extensions.lib;PhysX3_x86.lib;PhysX3Vehicle.lib;PhysXProfileSDK.lib;PhysXVisualDebuggerSDK.lib;PxTask.lib;ftkvc40.lib;legacy_stdio_definitions.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libc.lib;libcmt.lib</IgnoreSpecificDefaultLibraries>
       <Profile>false</Profile>
     </Link>
@@ -99,7 +101,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <IgnoreSpecificDefaultLibraries>libc.lib;libcmt.lib</IgnoreSpecificDefaultLibraries>
-      <AdditionalDependencies>Core.lib;MediaCommon.lib;DX11MediaMulti.lib;Renderer.lib;R2D.lib;Collision.lib;Game.lib;Particles.lib;Sound.lib;PhysX3CharacterKinematicCHECKED_x86.lib;PhysX3CommonCHECKED_x86.lib;PhysX3CookingCHECKED_x86.lib;PhysX3ExtensionsCHECKED.lib;PhysX3CHECKED_x86.lib;PhysX3VehicleCHECKED.lib;PhysXProfileSDKCHECKED.lib;PhysXVisualDebuggerSDKCHECKED.lib;PxTaskCHECKED.lib;ftkvc40.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Core.lib;MediaCommon.lib;DX11MediaMulti.lib;Renderer.lib;Renderer2D.lib;Game.lib;Particles.lib;Sound.lib;AI.lib;PhysX3CharacterKinematic_x86.lib;PhysX3Common_x86.lib;PhysX3Cooking_x86.lib;PhysX3Extensions.lib;PhysX3_x86.lib;PhysX3Vehicle.lib;PhysXProfileSDK.lib;PhysXVisualDebuggerSDK.lib;PxTask.lib;ftkvc40.lib;legacy_stdio_definitions.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <Midl>

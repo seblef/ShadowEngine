@@ -14,19 +14,19 @@
     <ProjectGuid>{9EB64C30-D46A-49E9-9282-951D4A17670D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>MediaCommon</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
@@ -41,13 +41,15 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\SDK\</OutDir>
-    <TargetName>MediaCommonD</TargetName>
+    <OutDir>..\build\$(Configuration)\lib\</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
     <IncludePath>..\SDK;$(IncludePath)</IncludePath>
+    <IntDir>..\build\$(Configuration)\int\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>..\SDK</OutDir>
-    <IncludePath>D:\Code\Shadow\SDK;$(IncludePath)</IncludePath>
+    <OutDir>..\build\$(Configuration)\lib\</OutDir>
+    <IncludePath>..\SDK;$(IncludePath)</IncludePath>
+    <IntDir>..\build\$(Configuration)\int\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

@@ -28,6 +28,8 @@ public:
 	virtual const char*			getMachineName() const = 0;
 	virtual unsigned int		getStateID(const string& state) = 0;
 	virtual bool				onGlobalEvent(AIAgent* agent, const AIEvent& e)		{ return false;  };
+
+	virtual void				abort() = 0;
 };
 
 #endif

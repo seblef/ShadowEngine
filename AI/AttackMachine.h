@@ -23,6 +23,8 @@ public:
 		else
 			return 0xffffffff;
 	}
+
+	void					abort() {}
 };
 
 #endif

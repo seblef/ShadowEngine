@@ -14,19 +14,19 @@
     <ProjectGuid>{CBD7D7C7-954F-4342-84C5-A3D5AB29D7FD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Renderer2D</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
@@ -41,15 +41,17 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\SDK\</OutDir>
+    <OutDir>..\build\$(Configuration)\lib\</OutDir>
     <TargetExt>.lib</TargetExt>
     <IncludePath>..\SDK;$(IncludePath)</IncludePath>
-    <TargetName>R2DD</TargetName>
+    <TargetName>$(ProjectName)</TargetName>
+    <IntDir>..\build\$(Configuration)\int\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>..\SDK</OutDir>
-    <TargetName>R2D</TargetName>
-    <IncludePath>D:\Code\Shadow\SDK;$(IncludePath)</IncludePath>
+    <OutDir>..\build\$(Configuration)\lib\</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <IncludePath>..\SDK;$(IncludePath)</IncludePath>
+    <IntDir>..\build\$(Configuration)\int\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

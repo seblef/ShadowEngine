@@ -14,19 +14,19 @@
     <ProjectGuid>{3692DD20-B689-427D-A71D-F8AF258CD5B6}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Game</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
@@ -41,14 +41,17 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\SDK\</OutDir>
-    <TargetName>GameD</TargetName>
+    <OutDir>..\build\$(Configuration)\lib\</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
     <IncludePath>..\SDK\PhysX\Include;..\SDK\DirectX11;..\SDK\3DS;..\SDK;$(IncludePath)</IncludePath>
-    <LibraryPath>..\SDK;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\build\lib\$(Configuration);$(LibraryPath)</LibraryPath>
+    <IntDir>..\build\$(Configuration)\int\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>..\SDK</OutDir>
-    <IncludePath>D:\Code\Shadow\SDK\3DS;D:\Code\Shadow\SDK\PhysX\Include;D:\Code\Shadow\SDK;$(IncludePath)</IncludePath>
+    <OutDir>..\build\$(Configuration)\lib\</OutDir>
+    <IncludePath>..\SDK\PhysX\Include;..\SDK\DirectX11;..\SDK\3DS;..\SDK;$(IncludePath)</IncludePath>
+    <IntDir>..\build\$(Configuration)\int\$(ProjectName)\</IntDir>
+    <LibraryPath>..\build\lib\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -63,7 +66,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>CoreD.lib;MediaCommonD.lib</AdditionalDependencies>
+      <AdditionalDependencies>Core.lib;MediaCommon.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../build/$(Configuration)/lib/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -84,6 +88,10 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>../build/$(Configuration)/lib/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Core.lib;MediaCommon.lib</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

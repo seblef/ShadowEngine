@@ -46,4 +46,4 @@ HDR_exposure				0.5
 HDR_brightness_threshold	0.5
 
 HDAO_enable					true
-HDR_enable					false
+HDR_enable					true

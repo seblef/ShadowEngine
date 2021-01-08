@@ -14,19 +14,19 @@
     <ProjectGuid>{1CD56BC8-7691-435C-BAE8-DC3EB3FB227F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Particles</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
@@ -41,13 +41,15 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\SDK\</OutDir>
-    <TargetName>ParticlesD</TargetName>
+    <OutDir>..\build\$(Configuration)\lib\</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
     <IncludePath>..\SDK;$(IncludePath)</IncludePath>
+    <IntDir>..\build\$(Configuration)\int\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>..\SDK</OutDir>
-    <IncludePath>D:\Code\Shadow\SDK;$(IncludePath)</IncludePath>
+    <OutDir>..\build\$(Configuration)\lib\</OutDir>
+    <IncludePath>..\SDK;$(IncludePath)</IncludePath>
+    <IntDir>..\build\$(Configuration)\int\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

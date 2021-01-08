@@ -14,19 +14,19 @@
     <ProjectGuid>{96AFE3E3-4F63-4405-BCA5-3363D423F689}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>DX11MediaMulti</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
@@ -41,15 +41,17 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\SDK\</OutDir>
-    <TargetName>DX11MultiD</TargetName>
+    <OutDir>..\build\$(Configuration)\lib\</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
     <IncludePath>..\SDK\DirectX11;..\SDK;$(IncludePath)</IncludePath>
-    <LibraryPath>..\SDK\DirectX11\Lib;..\SDK;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\SDK\DirectX11\Lib;..\build\lib\$(Configuration);$(LibraryPath)</LibraryPath>
+    <IntDir>..\build\$(Configuration)\int\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>..\SDK</OutDir>
-    <IncludePath>D:\Code\Shadow\SDK\DirectX11;D:\Code\Shadow\SDK;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Code\Shadow\SDK\DirectX11\Lib;$(LibraryPath)</LibraryPath>
+    <OutDir>..\build\$(Configuration)\lib\</OutDir>
+    <IncludePath>..\SDK\DirectX11;..\SDK;$(IncludePath)</IncludePath>
+    <LibraryPath>..\SDK\DirectX11\Lib;..\build\lib\$(Configuration);$(LibraryPath)</LibraryPath>
+    <IntDir>..\build\$(Configuration)\int\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
